@@ -1,30 +1,27 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import lottie from 'lottie-web';
+import React from "react";
+import PropTypes from "prop-types";
+import lottie from "lottie-web/build/player/lottie_light";
 
 export default class Lottie extends React.Component {
   componentDidMount() {
-    const {
-      options,
-      eventListeners,
-    } = this.props;
+    const { options, eventListeners } = this.props;
 
     const {
       loop,
       autoplay,
       animationData,
       rendererSettings,
-      segments,
+      segments
     } = options;
 
     this.options = {
       container: this.el,
-      renderer: 'svg',
+      renderer: "svg",
       loop: loop !== false,
       autoplay: autoplay !== false,
       segments: segments !== false,
       animationData,
-      rendererSettings,
+      rendererSettings
     };
 
     this.options = { ...this.options, ...options };
@@ -38,7 +35,7 @@ export default class Lottie extends React.Component {
     if (this.options.animationData !== nextProps.options.animationData) {
       this.deRegisterEvents(this.props.eventListeners);
       this.destroy();
-      this.options = {...this.options, ...nextProps.options};
+      this.options = { ...this.options, ...nextProps.options };
       this.anim = lottie.loadAnimation(this.options);
       this.registerEvents(nextProps.eventListeners);
     }
@@ -98,14 +95,20 @@ export default class Lottie extends React.Component {
   }
 
   registerEvents(eventListeners) {
-    eventListeners.forEach((eventListener) => {
-      this.anim.addEventListener(eventListener.eventName, eventListener.callback);
+    eventListeners.forEach(eventListener => {
+      this.anim.addEventListener(
+        eventListener.eventName,
+        eventListener.callback
+      );
     });
   }
 
   deRegisterEvents(eventListeners) {
-    eventListeners.forEach((eventListener) => {
-      this.anim.removeEventListener(eventListener.eventName, eventListener.callback);
+    eventListeners.forEach(eventListener => {
+      this.anim.removeEventListener(
+        eventListener.eventName,
+        eventListener.callback
+      );
     });
   }
 
@@ -117,7 +120,7 @@ export default class Lottie extends React.Component {
     } else {
       this.anim.pause();
     }
-  }
+  };
 
   render() {
     const {
@@ -126,16 +129,16 @@ export default class Lottie extends React.Component {
       ariaRole,
       ariaLabel,
       isClickToPauseDisabled,
-      title,
+      title
     } = this.props;
 
-    const getSize = (initial) => {
+    const getSize = initial => {
       let size;
 
-      if (typeof initial === 'number') {
+      if (typeof initial === "number") {
         size = `${initial}px`;
       } else {
-        size = initial || '100%';
+        size = initial || "100%";
       }
 
       return size;
@@ -144,19 +147,21 @@ export default class Lottie extends React.Component {
     const lottieStyles = {
       width: getSize(width),
       height: getSize(height),
-      overflow: 'hidden',
-      margin: '0 auto',
-      outline: 'none',
-      ...this.props.style,
+      overflow: "hidden",
+      margin: "0 auto",
+      outline: "none",
+      ...this.props.style
     };
 
-    const onClickHandler = isClickToPauseDisabled ? () => null : this.handleClickToPause;
+    const onClickHandler = isClickToPauseDisabled
+      ? () => null
+      : this.handleClickToPause;
 
     return (
       // Bug with eslint rules https://github.com/airbnb/javascript/issues/1374
       // eslint-disable-next-line jsx-a11y/no-static-element-interactions
       <div
-        ref={(c) => {
+        ref={c => {
           this.el = c;
         }}
         style={lottieStyles}
@@ -184,7 +189,7 @@ Lottie.propTypes = {
   ariaLabel: PropTypes.string,
   isClickToPauseDisabled: PropTypes.bool,
   title: PropTypes.string,
-  style: PropTypes.string,
+  style: PropTypes.string
 };
 
 Lottie.defaultProps = {
@@ -192,8 +197,8 @@ Lottie.defaultProps = {
   isStopped: false,
   isPaused: false,
   speed: 1,
-  ariaRole: 'button',
-  ariaLabel: 'animation',
+  ariaRole: "button",
+  ariaLabel: "animation",
   isClickToPauseDisabled: false,
-  title: '',
+  title: ""
 };

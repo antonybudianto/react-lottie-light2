@@ -1,11 +1,13 @@
-# Lottie Animation View for React ([Angular](https://github.com/chenqingspring/ng-lottie), [Vue](https://github.com/chenqingspring/vue-lottie))
+# react-lottie-light
 
-[![npm version](https://badge.fury.io/js/react-lottie.svg)](http://badge.fury.io/js/react-lottie)
+[![npm version](https://badge.fury.io/js/react-lottie-light.svg)](http://badge.fury.io/js/react-lottie-light)
+
+# NOTE: this is a fork of `react-lottie` to use `lottie_light.js` instead of `lottie`
 
 ## Demo
 https://chenqingspring.github.io/react-lottie
 
-## Wapper of bodymovin.js
+## Wrapper of bodymovin.js
 
 [bodymovin](https://github.com/bodymovin/bodymovin) is [Adobe After Effects](http://www.adobe.com/products/aftereffects.html) plugin for exporting animations as JSON, also it provide bodymovin.js for render them as svg/canvas/html.
 
