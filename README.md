@@ -2,7 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/react-lottie-light.svg)](http://badge.fury.io/js/react-lottie-light)
 
-# NOTE: this is a fork of `react-lottie` to use `lottie_light.js` instead of `lottie`
+**NOTE:** this is a fork of `react-lottie` to use `lottie_light.js` instead of `lottie`
 
 ## Demo
 https://chenqingspring.github.io/react-lottie
