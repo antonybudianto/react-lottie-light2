@@ -1,6 +1,6 @@
 {
-  "name": "react-lottie-light",
-  "version": "1.2.5",
+  "name": "react-lottie-light2",
+  "version": "1.2.6",
   "description": "lottie animation view for React",
   "repository": {
     "type": "git",
@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "babel-runtime": "^6.26.0",
-    "lottie-web": "^5.5.9"
+    "lottie-web": "5.6.6"
   },
   "main": "dist/index.js",
   "engines": {
