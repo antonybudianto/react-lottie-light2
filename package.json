@@ -1,6 +1,6 @@
 {
   "name": "react-lottie-light2",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "lottie animation view for React",
   "repository": {
     "type": "git",
@@ -21,13 +21,16 @@
   },
   "devDependencies": {
     "@kadira/storybook": "^2.35.3",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
+    "@babel/cli": "7.12.10",
+    "@babel/core": "7.12.10",
     "babel-eslint": "^6.1.2",
-    "babel-loader": "^6.2.5",
-    "babel-plugin-transform-runtime": "^6.15.0",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-react-app": "^0.2.1",
+    "babel-loader": "8.0.5",
+    "@babel/plugin-transform-runtime": "7.12.10",
+    "@babel/polyfill": "7.12.1",
+    "babel-preset-react-app": "10.0.0",
+    "@babel/preset-react": "7.12.10",
+    "@babel/plugin-proposal-class-properties": "7.12.1",
+    "@babel/preset-env": "7.12.11",
     "chai": "^3.5.0",
     "enzyme": "^2.2.0",
     "eslint": "^3.6.0",
@@ -50,7 +53,8 @@
     "lottie-web": "^5.7.5"
   },
   "dependencies": {
-    "babel-runtime": "^6.26.0"
+    "core-js": "3.8.2",
+    "@babel/runtime": "7.12.5"
   },
   "main": "dist/index.js",
   "engines": {
