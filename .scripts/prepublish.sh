@@ -9,7 +9,7 @@
 echo "=> Transpiling 'src' into ES5 ..."
 echo ""
 rm -rf ./dist
-NODE_ENV=production ./node_modules/.bin/babel --ignore tests,stories --plugins "transform-runtime" ./src --out-dir ./dist
+NODE_ENV=production ./node_modules/.bin/babel ./src --out-dir ./dist --ignore tests,stories
 echo ""
 echo "=> Transpiling completed."
 
